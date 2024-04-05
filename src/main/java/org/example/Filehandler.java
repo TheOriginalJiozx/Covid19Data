@@ -13,7 +13,7 @@ public class FileHandler {
         Scanner sc = null;
         try {
             sc = new Scanner(file);
-            sc.nextLine();  // Skip første linje
+            sc.nextLine();
 
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
@@ -23,22 +23,19 @@ public class FileHandler {
         while (sc.hasNext()) {
             String line = sc.nextLine();
             String[] attributes = line.split(",");
-            patient = new Covid19Data(
-                    (Integer.parseInt(attributes[0])),
-                    (attributes[1]),
-                    (attributes[2]),
-                    (attributes[3]),
-                    (attributes[4]),
-                    (attributes[5]),
-                    (attributes[6]),
-                    attributes[7],
-                    );
-
+            patient = new Covid19Data(Integer.parseInt(attributes[0]),
+                    attributes[1],
+                    attributes[2],
+                    attributes[3],
+                    attributes[4],
+                    attributes[5],
+                    attributes[6]
+            );
             patients.add(patient);
-
         }
         sc.close();
         return patients;
     }
 
 }
+

@@ -10,7 +10,6 @@ public class Main {
         //load tour patients
         ArrayList<Covid19Data> patients = fh.loadAllPatients();
 
-        // display tour patients
         for (Covid19Data patient: patients) {
             System.out.println(patient);
         }

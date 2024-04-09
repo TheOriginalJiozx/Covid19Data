@@ -40,6 +40,5 @@ public class FileHandler {
         sc.close();
         return patients;
     }
-
 }
 
